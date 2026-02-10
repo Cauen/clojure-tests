@@ -1,3 +1,3 @@
 # Commands
 
-clj first.clj
+clj -M -m first
