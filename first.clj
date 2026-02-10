@@ -1,7 +1,15 @@
 (ns first)
 
-(defn -main [& args]
-  (println "Hello, World!")
-  (let [value 3]
-    ;; Print the above value, using pipe
-    (println (str "The value is " value " and the first arg is " (first args) " and the second arg is " (second args) " and the third arg is " (nth args 2)))))
+(def person
+  {:name "John"
+   :surname "Doe"})
+
+(defn full-name [{:keys [name surname]}]
+  (str name " " surname))
+
+(defn print-full-name [person-data]
+  (let [person-full-name (full-name person-data)]
+    (println person-full-name)))
+
+(defn -main [& _args]
+  (print-full-name person))
